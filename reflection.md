@@ -4,8 +4,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
-- What did the game look like the first time you ran it?
-- List at least two concrete bugs you noticed at the start  
+- What did the game look like the first time you ran it? When I loaded the game, it loaded successfully and from a glance it seems like everything works out fine. However, as I continued throughout the game I see that several parts of the game did not work correctly. Some guesses caused unexpected results and the game logic did not always handle the inputs correctly. I also noticed many issues with the score updates and hint behavior while testing different inputs. Through me doing this I was able to identify certain bus and begin fixing them one at a time.
+- List at least two concrete bugs you noticed at the start  The two concrete bugs that I noticed at the start of the start of the game was the attempts bug and the hints. The attempt bug was that the game listed 7 attempts, but it had already said that I used an attempt when I did not even input anything in yet. The hint bug was that it would tell me to go higher than the secret number when I inputted a number that was higher than the secret number instead of telling me to go lower.
   (for example: "the hints were backwards").
 
 **Bug Reproduction Log**
@@ -14,18 +14,18 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+|70 | GO HIGHER! | GO LOWER! |None |
+| Empty input|Prompt user to enter a guess|It said "Enter a guess." |None |
+| 70.5|GO HIGHER!|GO LOWER! |None |
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
-- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
-- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
+- Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? 
+- Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result). 
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
-
+The AI tools that I used on this project were chatgpt and Copilot. After finding a bugh where the game's hints did not match the secret number correctly, I asked the AI to help explain the logic and identify where the issue might be occuring. One example that the AI suggested that was correct was reviewing the comparison logic in the guessing functions and checking the related test files. I verified the suggestion by running the game, testing different guesses, and running the pytest tests until the behavior matched the expected outputs.
 ---
 
 ## 3. Debugging and testing your fixes
@@ -34,7 +34,7 @@ Document at least 3 bugs you found. Add rows as needed.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
-
+The way I decided whether a bug was really fixed was by using pytest and running a manual test as well. After I ran pytest and see that all four tests passed, I then tested the game manually in the Streamlit browser. This showed me that the core game logic was fixed and that the fixes did not break any existing test. It also showed me taht some user interface issues still remained, such as needing to click the Submit Guess button twice and habing issues with empty input handling. This taught me that passing automated tests does not always mean every part of the application works perfectly for the user. Yes, AI helped me understand the purpose of pytest tests and how they related to the game logic. It suggested running the test after making changes and explained what behavior the code should produce. I verified the results by running pytest and manually testing the game to make sure the fixes actually worked.
 ---
 
 ## 4. What did you learn about Streamlit and state?
