@@ -25,7 +25,7 @@ Document at least 3 bugs you found. Add rows as needed.
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)? 
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result). 
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
-The AI tools that I used on this project were chatgpt and Copilot. After finding a bugh where the game's hints did not match the secret number correctly, I asked the AI to help explain the logic and identify where the issue might be occuring. One example that the AI suggested that was correct was reviewing the comparison logic in the guessing functions and checking the related test files. I verified the suggestion by running the game, testing different guesses, and running the pytest tests until the behavior matched the expected outputs.
+The AI tools that I used on this project were chatgpt and Copilot. After finding a bugh where the game's hints did not match the secret number correctly, I asked the AI to help explain the logic and identify where the issue might be occuring. One example that the AI suggested that was correct was reviewing the comparison logic in the guessing functions and checking the related test files. I verified the suggestion by running the game, testing different guesses, and running the pytest tests until the behavior matched the expected outputs. One thing I noticed during this project was that most of the AI suggestions were accurate and helpful. I did not run into any issues at all. However, I stiil made sure to verify each change made by running pytest and manually testing the game in Streamlit. This showed that even when AI gives good advice I still have to double check and confirm that the fixes actually work.
 ---
 
 ## 3. Debugging and testing your fixes
@@ -40,7 +40,7 @@ The way I decided whether a bug was really fixed was by using pytest and running
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+I learned that Streamlit reruns the script from top to bottom every time the user interacts with the app, like when clicking a button. Session state is important because it keeps track of values like the secret number, score, and attempts so they do not reset every rerun. Without session state, the game would restart every time a guess was submitted. This helped me understand why some bugs happened when the state was not handled correctly. It's basically like saving progress each time when playing video games, without this feature you would have to start over every time.
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -49,3 +49,4 @@ The way I decided whether a bug was really fixed was by using pytest and running
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+The habit or strategy that I would continue to use in future projects would be running pytest often after making each change. I would do this because it helps to ensure what I wanted to debug is working properly and that I did not break any other parts of the code. The thing I would do differently next time I work with AI on a coding task is to be more specific with my prompting and what I would want done. I learned as I communicated better the AI was able to help me better. This project really opened my eyes to how AI generates code because not only does it generate it, it tells you why and goes through each problem as if it is like thinking through the problem, just like we would as humans.

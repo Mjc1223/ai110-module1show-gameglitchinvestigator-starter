@@ -25,19 +25,21 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- The game's purpose is to let the user guess a secret number within a limited range of numbers and attempts based on the selection of difficulty.
+- While testing the game there were multiple bugs. One bug was the hint logic not correlating with the actual secret number. Another bug was empty input handling, where quotation marks would appear instead of properly prompting me to enter a guess. I also noticed that the submit guess button had to be clicked more than once before the game updated and responded.
+- To fix these issues, I used AI assistance and reviewed the game logic in `app.py` and `logic_utils.py`. I fixed the inconsistent type conversion between strings and integers, which corrected the hint mismatch bug. I verified my fixes by running pytest, where all four tests passed, and by manually testing the game in Streamlit.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User starts the game and is prompted to guess a number, the number of attempts and the range of numbers to guess from is based on difficulty.
+2. User enters a guess of 50.
+3. Game returns "Go HIGHER!"
+4. User enters a guess of 55.
+5. Game returns "Go LOWER!"
+6. Score updates correctly after each guess is made.
+7. The game ends once the user guesses correctly or runs out of attempts.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
@@ -45,9 +47,10 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 
 ```
 # Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
-```
+python -m pytest -q
+....                                                                                                                                              [100%]
+4 passed in 0.03
+
 
 ## 🚀 Stretch Features
 
